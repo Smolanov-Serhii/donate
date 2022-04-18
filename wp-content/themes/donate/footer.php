@@ -56,16 +56,6 @@
             </div>
         </div>
 	</footer>
-    <div class="popup">
-        <div class="popup__container">
-            <h2 class="popup__title">
-                Why donate to Educado?
-            </h2>
-            <div class="popup__content">
-
-            </div>
-        </div>
-    </div>
 <img src="<?php echo get_template_directory_uri() . '/images/dec-bottom-right.svg'?>" class="dec-right">
 
 <?php wp_footer(); ?>

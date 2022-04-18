@@ -28,6 +28,20 @@ $( document ).ready(function() {
         });
     };
 
+    if ($(".js-popup").length){
+        $(".js-popup").click( function(e) {
+            $('.popup').fadeToggle(300);
+            $('body').addClass('lock');
+        });
+    };
+
+    if ($(".popup__close").length){
+        $(".popup__close").click( function(e) {
+            $('.popup').fadeToggle(300);
+            $('body').removeClass('lock');
+        });
+    };
+
     $(document).mouseup(function (e){ // событие клика по веб-документу
         var div = $(".language-chooser-image"); // тут указываем ID элемента
         if (!div.is(e.target) // если клик был не по нашему блоку
@@ -35,6 +49,26 @@ $( document ).ready(function() {
             $('.other-language').fadeOut(300); // скрываем его
         }
     });
+
+    $(document).mouseup(function (e){ // событие клика по веб-документу
+        var div = $(".popup__container"); // тут указываем ID элемента
+        if (!div.is(e.target) // если клик был не по нашему блоку
+            && div.has(e.target).length === 0) { // и не по его дочерним элементам
+            $('.popup').fadeOut(300); // скрываем его
+            $('body').removeClass('lock');
+        }
+    });
+
+    if($('.content__tabs').length){
+        $(".content__tabs .content__tab").click(function() {
+            $(".content__tabs .content__tab").removeClass("active").eq($(this).index()).addClass("active");
+            $(".content__contents .content__content").hide().eq($(this).index()) .css("display", "flex")
+                .hide()
+                .fadeIn();
+        }).eq(0).addClass("active");
+        $(".content__contents .content__content").eq(0).addClass("active").fadeIn(300);
+    }
+
 });
 
 

@@ -30,7 +30,13 @@ body{
     right: 0;
     bottom: 0;
     pointer-events: none;
+    z-index: -1;
   }
+}
+.lock{
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
 }
 .button-donate{
   cursor: pointer;
@@ -50,6 +56,23 @@ body{
   &:hover{
     background-color: #8F8F2D;
     color: white;
+    box-shadow: 0px 0px 16px rgba(211, 211, 96, 0.32);
+  }
+}
+.pay-btn{
+  background: #D3D360;
+  box-shadow: 0px 29px 26px -20px rgba(211, 211, 96, 0.37);
+  border-radius: 66px;
+  padding: 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 392px;
+  transition: ease-in 0.2s;
+  border: 2px solid #D3D360;
+  &:hover{
+    background-color: #FFFFFF;
+    color: #D3D360;
     box-shadow: 0px 0px 16px rgba(211, 211, 96, 0.32);
   }
 }
@@ -239,7 +262,95 @@ body{
     }
   }
 }
+.content{
+  padding-top: 100px;
+  &__tabs{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  &__tab{
+    background: #FFFFFF;
+    border: 2px solid #EAEAEA;
+    border-radius: 37px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 144.9%;
+    text-align: center;
+    letter-spacing: 0.05em;
+    color: #161616;
+    padding: 16px;
+    margin: 0 25px;
+    flex: 1;
+    cursor: pointer;
+    transition: ease-in 0.2s;
+    &:first-child{
+      margin-left: 0;
+    }
+    &:last-child{
+      margin-right: 0;
+    }
+    &.active{
+      background: #FFFFFF;
+      border: 2px solid #D3D360;
+      box-sizing: border-box;
+      box-shadow: 0px 0px 16px rgba(211, 211, 96, 0.32);
+      border-radius: 37px;
+    }
+  }
+  &__contents{
 
+  }
+  &__content{
+    display: none;
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 36px;
+    h3{
+      font-style: normal;
+      font-weight: 700;
+      font-size: 36px;
+      line-height: 42px;
+      text-align: center;
+      color: #767620;
+      margin-bottom: 17px;
+      margin-top: 64px;
+    }
+    p{
+      font-style: normal;
+      font-weight: 400;
+      font-size: 24px;
+      line-height: 28px;
+      text-align: center;
+      color: #000000;
+    }
+    P > em{
+      font-style: normal;
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 180%;
+      text-align: center;
+      color: #B1B1B1;
+    }
+    p strong em{
+      font-style: normal;
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 23px;
+      text-align: center;
+      color: #8F8F2D;
+    }
+  }
+  &__button{
+    margin-top: 74px;
+    cursor: pointer;
+    &:nth-child(2){
+      margin-top: 20px;
+    }
+  }
+}
 .footer{
   width: 100%;
   padding-top: 23px;
@@ -257,6 +368,7 @@ body{
       position: absolute;
       bottom: 62px;
       right: 88px;
+      pointer-events: none;
     }
   }
   &__contacts, &__phones, &__email{
@@ -293,5 +405,70 @@ body{
       display: flex;
       flex-direction: column;
     }
+  }
+}
+.popup{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.7);
+  z-index: 99;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 50px;
+  &__container{
+    background: #FFFFFF;
+    box-shadow: 0px 0px 22px rgba(0, 0, 0, 0.12);
+    padding: 88px 85px 120px 85px;
+    position: relative;
+    max-width: 1120px;
+    height: 873px;
+  }
+  &__close{
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    cursor: pointer;
+  }
+  &__bg{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    img{
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
+  }
+  &__title{
+    font-weight: 600;
+    font-size: 48px;
+    line-height: 56px;
+    text-align: center;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #161616;
+    position: relative;
+    @extend .poiret;
+    margin-bottom: 48px;
+  }
+  &__content{
+    position: relative;
+    p{
+      font-style: normal;
+      font-weight: 400;
+      font-size: 24px;
+      line-height: 136.9%;
+      text-align: center;
+      color: #161616;
+      margin-bottom: 40px;
+    }
+
   }
 }
