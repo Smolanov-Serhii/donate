@@ -219,13 +219,13 @@ function qtranxf_generateLanguageSelectCode( $args = array(), $id = '' ) {
                 $alt     = $q_config['language_name'][ $language ] . ' (' . $language . ')';
                 $classes = array( 'lang-' . $language );
                 if ( $language == $q_config['language'] ) {
-                    $classes[] = 'active';
+                    $classes[] = 'active js-locale';
                     echo '<span class="' . implode( ' ', $classes ) . '">';
                     echo '<img class="qtranxs-flag" src="' . get_template_directory_uri() . '/images/locale/' . $language . '.svg' . '" alt="' . $alt . '" />';
                     echo '</span>' . PHP_EOL;
                 }
             }
-            echo "<ul class='other-language'>";
+            echo "<ul class='other-language' style='display: none;'>";
             foreach ( qtranxf_getSortedLanguages() as $language ) {
                 $alt     = $q_config['language_name'][ $language ] . ' (' . $language . ')';
                 $classes = array( 'lang-' . $language );

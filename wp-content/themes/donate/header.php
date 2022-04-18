@@ -23,7 +23,6 @@
 
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
-<div id="page" class="site">
 	<header id="header" class="header">
         <div class="header__container main-container">
             <div class="header__logo">
@@ -36,6 +35,7 @@
             <div class="header__phones">
                 <img src="<?php echo get_template_directory_uri() . '/images/phone.svg'?>" alt="phones">
                 <a href="tel:<?php echo get_field('telefon_1', 'options')?>"><?php echo get_field('telefon_1', 'options')?></a>
+                <span>|</span>
                 <a href="tel:<?php echo get_field('telefon_2', 'options')?>"><?php echo get_field('telefon_2', 'options')?></a>
             </div>
             <div class="header__email">
@@ -46,21 +46,21 @@
                 <?php
                 if(get_field('facebook', 'options')){
                     ?>
-                    <a href="<?php get_field('facebook', 'options')?>" target="_blank">
+                    <a href="<?php echo get_field('facebook', 'options')?>" target="_blank">
                         <img src="<?php echo get_template_directory_uri() . '/images/facebook.svg'?>" alt="facebook">
                     </a>
                     <?php
                 }
                 if(get_field('youtube', 'options')){
                     ?>
-                    <a href="<?php get_field('facebook', 'options')?>" target="_blank">
+                    <a href="<?php echo get_field('youtube', 'options')?>" target="_blank">
                         <img src="<?php echo get_template_directory_uri() . '/images/youtube.svg'?>" alt="youtube">
                     </a>
                     <?php
                 }
                 if(get_field('telegram', 'options')){
                     ?>
-                    <a href="<?php get_field('telegram', 'options')?>" target="_blank">
+                    <a href="<?php echo get_field('telegram', 'options')?>" target="_blank">
                         <img src="<?php echo get_template_directory_uri() . '/images/telegram.svg'?>" alt="telegram">
                     </a>
                     <?php
