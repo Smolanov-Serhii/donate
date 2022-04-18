@@ -15,5 +15,12 @@
 .test{
   color: black;
 }
-
-
+.main{
+  overflow: hidden;
+  width: 100vw;
+}
+.main-container{
+  max-width: 1220px;
+  width: 100%;
+  margin: auto;
+}
