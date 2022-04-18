@@ -23,28 +23,22 @@
 <div id="page" class="site">
 	<header id="header" class="header">
 		<div class="header__logo">
-			<?php
-			the_custom_logo();
-			if ( is_front_page() && is_home() ) :
-				?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-				<?php
-			else :
-				?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-				<?php
-			endif;
-			?>
+            <a href="<?php echo esc_url( home_url( '/' ) ); ?>">
+                <?php the_custom_logo(); ?>
+            </a>
 		</div>
+        <div class="header__contacts">
 
-		<nav class="header__nav">
-			<?php
-			wp_nav_menu(
-				array(
-					'theme_location' => 'menu-1',
-					'menu_id'        => 'primary-menu',
-				)
-			);
-			?>
-		</nav>
+        </div>
+<!--		<nav class="header__nav">-->
+<!--			--><?php
+//			wp_nav_menu(
+//				array(
+//					'theme_location' => 'main-menu',
+//					'menu_id'        => 'main-menu',
+//				)
+//			);
+//			?>
+<!--		</nav>-->
+        <?php dynamic_sidebar( 'locale' ); ?>
 	</header>

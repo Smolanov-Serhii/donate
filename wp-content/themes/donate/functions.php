@@ -49,7 +49,7 @@ function donate_setup() {
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus(
 		array(
-			'menu-1' => esc_html__( 'Primary', 'donate' ),
+			'main-menu' => esc_html__( 'main-menu', 'donate' ),
 		)
 	);
 
@@ -122,13 +122,9 @@ add_action( 'after_setup_theme', 'donate_content_width', 0 );
 function donate_widgets_init() {
 	register_sidebar(
 		array(
-			'name'          => esc_html__( 'Sidebar', 'donate' ),
-			'id'            => 'sidebar-1',
-			'description'   => esc_html__( 'Add widgets here.', 'donate' ),
-			'before_widget' => '<section id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</section>',
-			'before_title'  => '<h2 class="widget-title">',
-			'after_title'   => '</h2>',
+			'name'          => esc_html__( 'Языки', 'donate' ),
+			'id'            => 'locale',
+			'description'   => esc_html__( 'Добавте переключатель языков.', 'donate' ),
 		)
 	);
 }
@@ -138,16 +134,16 @@ add_action( 'widgets_init', 'donate_widgets_init' );
  * Enqueue scripts and styles.
  */
 function donate_scripts() {
-	wp_enqueue_style( 'donate-style', get_stylesheet_uri(), array(), _S_VERSION );
-	wp_style_add_data( 'donate-style', 'rtl', 'replace' );
+    wp_enqueue_style( 'donate-style', get_template_directory_uri() . '/dist/css/style.css', array(), _S_VERSION );
+    wp_enqueue_script('donate-jquery', "https://code.jquery.com/jquery-3.6.0.min.js");
+    wp_enqueue_script('donate-script', get_template_directory_uri() . '/dist/js/common.js', array(), _S_VERSION, true );
 
-	wp_enqueue_script( 'donate-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
-
-	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-		wp_enqueue_script( 'comment-reply' );
-	}
+    if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+        wp_enqueue_script( 'comment-reply' );
+    }
 }
 add_action( 'wp_enqueue_scripts', 'donate_scripts' );
+
 
 /**
  * Implement the Custom Header feature.
@@ -176,3 +172,17 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+if( function_exists('acf_add_options_page') ) {
+    acf_add_options_page(array(
+        'page_title' 	=> 'Параметры',
+        'menu_title'	=> 'Параметры темы',
+        'menu_slug' 	=> 'theme-general-settings',
+        'capability'	=> 'edit_posts',
+        'redirect'		=> false
+    ));
+
+
+}
+
+remove_action( 'wp_enqueue_scripts', 'wp_enqueue_global_styles' );
+remove_action( 'wp_body_open', 'wp_global_styles_render_svg_filters' );
