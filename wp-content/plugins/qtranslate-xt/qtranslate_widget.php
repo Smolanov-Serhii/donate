@@ -221,11 +221,12 @@ function qtranxf_generateLanguageSelectCode( $args = array(), $id = '' ) {
                 if ( $language == $q_config['language'] ) {
                     $classes[] = 'active js-locale';
                     echo '<span class="' . implode( ' ', $classes ) . '">';
-                    echo '<img class="qtranxs-flag" src="' . get_template_directory_uri() . '/images/locale/' . $language . '.svg' . '" alt="' . $alt . '" />';
+//                    echo '<img class="qtranxs-flag" src="' . get_template_directory_uri() . '/images/locale/' . $language . '.svg' . '" alt="' . $alt . '" />';
+                    echo $language;
                     echo '</span>' . PHP_EOL;
                 }
             }
-            echo "<ul class='other-language' style='display: none;'>";
+            echo "<ul class='other-language'>";
             foreach ( qtranxf_getSortedLanguages() as $language ) {
                 $alt     = $q_config['language_name'][ $language ] . ' (' . $language . ')';
                 $classes = array( 'lang-' . $language );
@@ -233,7 +234,8 @@ function qtranxf_generateLanguageSelectCode( $args = array(), $id = '' ) {
 
                 } else {
                     echo '<li class="' . implode( ' ', $classes ) . '"><a href="' . qtranxf_convertURL( $url, $language, false, true ) . '">';
-                    echo '<img class="qtranxs-flag" src="' . get_template_directory_uri() . '/images/locale/' . $language . '.svg' . '" alt="' . $alt . '" />';
+//                    echo '<img class="qtranxs-flag" src="' . get_template_directory_uri() . '/images/locale/' . $language . '.svg' . '" alt="' . $alt . '" />';
+                    echo $language;
                     echo '</a></li>' . PHP_EOL;
                 }
             }
