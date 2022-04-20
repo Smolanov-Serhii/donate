@@ -1,19 +1,21 @@
-$selectric-main-color:      #1d8fbd !default;                                              // Color used in border
+$selectric-main-color:      #D3D360 !default;                                              // Color used in border
 $selectric-secondary-color: rgba(29,143,189,1) !default;                                              // Color used in button
-$selectric-text-color:      #1d8fbd !default;                                              // Color used in label
+$selectric-text-color:      #161616 !default;                                              // Color used in label
 $selectric-bg-color:        #FFFFFF !default;                                           // Background color
 $selectric-btn-bg-color:    #FFFFFF !default;                                           // Button background color
-$selectric-height:          50px !default;                                              // Outer height
-$selectric-spacing:         10px !default;                                              // Label left padding
-$selectric-border-width:    1px !default;                                               // Outer border width
-$selectric-border-radius:   0px !default;                                               // Border radius
+$selectric-height:          55px !default;                                              // Outer height
+$selectric-spacing:         39px !default;                                              // Label left padding
+$selectric-border-width:    2px !default;                                               // Outer border width
+$selectric-border-radius:   37px !default;                                               // Border radius
 $selectric-inner-height:    $selectric-height - ($selectric-border-width * 2) !default; // Inner height
-$selectric-font-size:       16px !default;                                              // Font size
+$selectric-font-size:       18px !default;                                              // Font size
 
 .selectric-wrapper {
   position: relative;
   cursor: pointer;
-  font-family: 'Futura PT';
+  font-family: 'Raleway', sans-serif;
+  font-weight: 500;
+  line-height: 144.9%;
 }
 
 .selectric-responsive {
@@ -26,6 +28,7 @@ $selectric-font-size:       16px !default;                                      
   background: $selectric-bg-color;
   position: relative;
   overflow: hidden;
+  box-shadow: 0px 29px 26px -20px rgba(211, 211, 96, 0.37);
 
   .label {
     display: block;
@@ -38,9 +41,6 @@ $selectric-font-size:       16px !default;                                      
     color: $selectric-text-color;
     height: $selectric-inner-height;
     user-select: none;
-    @media all and (max-width: 500px) {
-      font-size: 12px;
-    }
   }
 
   .button {
@@ -208,12 +208,12 @@ $selectric-font-size:       16px !default;                                      
     }
 
     &.highlighted {
-      background: #e5e7e8;
+      background: #e3e3af;
       color: #444;
     }
 
     &:hover {
-      background: #e5e7e8;
+      background: #e3e3af;
       color: #444;
     }
   }
@@ -243,7 +243,7 @@ $selectric-font-size:       16px !default;                                      
     }
 
     li {
-      padding-left: 25px;
+      padding-left: 39px;
     }
   }
 }

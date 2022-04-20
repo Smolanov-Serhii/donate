@@ -13,6 +13,11 @@
 
 	<footer id="footer" class="footer">
         <div class="footer__container main-container">
+            <div class="footer__logo-mobile">
+                <a href="<?php echo esc_url( home_url( '/' ) ); ?>">
+                    <img src="<?php echo get_template_directory_uri() . '/images/footer-mobile.svg'?>" class="footer-mobile">
+                </a>
+            </div>
             <div class="footer__logo">
                 <img src="<?php echo get_template_directory_uri() . '/images/logo-footer-left.svg'?>" class="logo-left">
                 <a href="<?php echo esc_url( home_url( '/' ) ); ?>">
@@ -22,6 +27,7 @@
             <div class="footer__phones">
                 <img src="<?php echo get_template_directory_uri() . '/images/phone.svg'?>" alt="phones">
                 <a href="tel:<?php echo get_field('telefon_1', 'options')?>"><?php echo get_field('telefon_1', 'options')?></a>
+                <span>|</span>
                 <a href="tel:<?php echo get_field('telefon_2', 'options')?>"><?php echo get_field('telefon_2', 'options')?></a>
             </div>
             <div class="footer__email">

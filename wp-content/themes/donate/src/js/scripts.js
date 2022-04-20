@@ -35,6 +35,19 @@ $( document ).ready(function() {
         });
     };
 
+    if ($(".content__tabs-mobile").length){
+        $(function() {
+            $('.content__tabs-mobile select').selectric();
+        });
+        $( ".content__tabs-mobile select" ).change(function() {
+            let index = $(".content__tabs-mobile select")[0].selectedIndex;
+            $(".content__tabs .content__tab").removeClass("active").eq(index).addClass("active");
+            $(".content__contents .content__content").hide().eq(index) .css("display", "flex")
+                .hide()
+                .fadeIn();
+        });
+    };
+
     if ($(".popup__close").length){
         $(".popup__close").click( function(e) {
             $('.popup').fadeToggle(300);

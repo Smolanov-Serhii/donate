@@ -34,6 +34,22 @@ $post_id = get_the_ID();
         </section>
         <section class="content">
             <div class="content__container main-container">
+                <div class="content__tabs-mobile">
+                    <select>
+                        <?php
+                        if( have_rows('typ_donatov') ):
+                            while( have_rows('typ_donatov') ) : the_row();
+                                $tab = get_sub_field('vkladka');
+                                ?>
+                                <option value="<?php echo $tab;?>">
+                                    <?php echo $tab;?>
+                                </option>
+                                <?php
+                            endwhile;
+                        endif;
+                        ?>
+                    </select>
+                </div>
                 <div class="content__tabs">
                     <?php
                     $count = 1;

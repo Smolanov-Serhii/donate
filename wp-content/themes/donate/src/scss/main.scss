@@ -1,7 +1,7 @@
 @import "normalize";
 //@import "swiper-bundle";
 //@import "fresco";
-//@import "selectric";
+@import "selectric";
 //@import "jquery.mCustomScrollbar";
 //@import "aos";
 .poiret{
@@ -31,6 +31,9 @@ body{
     bottom: 0;
     pointer-events: none;
     z-index: -1;
+    @media all and (max-width: 1024px){
+      display: none;
+    }
   }
 }
 .lock{
@@ -53,6 +56,10 @@ body{
   justify-content: center;
   min-width: 290px;
   transition: ease-in 0.2s;
+  @media all and (max-width: 500px){
+    min-width: auto;
+    width: 100%;
+  }
   &:hover{
     background-color: #8F8F2D;
     color: white;
@@ -70,6 +77,10 @@ body{
   min-width: 392px;
   transition: ease-in 0.2s;
   border: 2px solid #D3D360;
+  @media all and (max-width: 500px){
+    min-width: auto;
+    width: 100%;
+  }
   &:hover{
     background-color: #FFFFFF;
     color: #D3D360;
@@ -80,12 +91,24 @@ body{
   overflow: hidden;
   width: 100%;
   padding-bottom: 231px;
+  @media all and (max-width: 1024px){
+    padding-bottom: 63px;
+  }
 }
 .main-container{
   padding: 0 100px;
   max-width: 1420px;
   width: 100%;
   margin: auto;
+  @media all and (max-width: 1400px){
+    padding: 0 75px;
+  }
+  @media all and (max-width: 1200px){
+    padding: 0 50px;
+  }
+  @media all and (max-width: 500px){
+    padding: 0 20px;
+  }
 }
 .header{
   z-index: 1;
@@ -94,6 +117,10 @@ body{
   top: 0;
   left: 0;
   width: 100%;
+  @media all and (max-width: 768px){
+    padding-top: 0;
+    overflow: hidden;
+  }
   &__container{
     display: flex;
     align-items: center;
@@ -101,6 +128,19 @@ body{
   }
   &__logo{
     position: relative;
+    @media all and (max-width: 768px){
+      display: none;
+    }
+    &-mobile{
+      display: none;
+      text-align: center;
+      flex: 1;
+      @media all and (max-width: 768px){
+        display: block;
+        margin-right: -100px;
+        margin-left: -115px;
+      }
+    }
     .logo-left{
       position: absolute;
       top: 14px;
@@ -112,9 +152,12 @@ body{
       left: 86px;
     }
   }
-  &__contacts, &__phones, &__email{
+  &__contacts, &__phones, &__email, &__socials{
     display: flex;
     align-items: center;
+    @media all and (max-width: 1024px){
+      display: none;
+    }
   }
   &__phones{
     span{
@@ -128,8 +171,14 @@ body{
     text-decoration: none;
     font-weight: 400;
     font-size: 20px;
-    line-height: 23px;
+    line-height: 115%;
     color: #161616;
+    @media all and (max-width: 1400px){
+      font-size: 18px;
+    }
+    @media all and (max-width: 1200px){
+      font-size: 16px;
+    }
   }
   .language-chooser-image{
     position: relative;
@@ -190,9 +239,9 @@ body{
           &:last-child{
             margin-bottom: 0;
           }
-          &:hover{
-            border: 1px solid white;
-          }
+          //&:hover{
+          //  border: 1px solid white;
+          //}
         }
       }
 
@@ -206,12 +255,27 @@ body{
   position: relative;
   padding-top: 238px;
   padding-bottom: 185px;
+  @media all and (max-width: 1024px){
+    padding-top: 210px;
+    padding-bottom: 155px;
+  }
+  @media all and (max-width: 768px){
+    padding-top: 190px;
+    padding-bottom: 115px;
+  }
+  @media all and (max-width: 500px){
+    padding-top: 164px;
+    padding-bottom: 95px;
+  }
   &__popup{
     position: absolute;
     bottom: -50px;
     width: 100%;
     z-index: 1;
     left: 0;
+    @media all and (max-width: 768px){
+      bottom: -35px;
+    }
     &-btn{
       background: #8F8F2D;
       box-shadow: 0px 38px 48px -36px rgba(211, 211, 96, 0.52);
@@ -219,13 +283,20 @@ body{
       font-style: normal;
       font-weight: 600;
       font-size: 24px;
-      line-height: 28px;
+      line-height: 116%;
       text-align: center;
       color: #FFFFFF;
       padding: 37px;
       cursor: pointer;
       transition: ease-in 0.2s;
       border: 2px solid #8F8F2D;
+      @media all and (max-width: 768px){
+        font-size: 22px;
+      }
+      @media all and (max-width: 500px){
+        padding: 21px;
+        font-size: 20px;
+      }
       &:hover{
         background: #FFFFFF;
         border: 2px solid #8F8F2D;
@@ -243,17 +314,39 @@ body{
     font-style: normal;
     font-weight: 400;
     font-size: 48px;
-    line-height: 56px;
+    line-height: 116%;
     text-align: center;
     letter-spacing: 0.05em;
     text-transform: uppercase;
     color: #161616;
     max-width: 790px;
     margin: 0 auto 54px auto;
+    @media all and (max-width: 1024px){
+      font-size: 40px;
+      margin-bottom: 46px;
+    }
+    @media all and (max-width: 768px){
+      font-size: 34px;
+      margin-bottom: 38px;
+    }
+    @media all and (max-width: 500px){
+      font-size: 30px;
+      margin-bottom: 30px;
+    }
+    @media all and (max-width: 400px){
+      font-size: 24px;
+      margin-bottom: 22px;
+    }
   }
   &__content{
     max-width: 978px;
     margin: 0 auto 74px auto;
+    @media all and (max-width: 768px){
+      margin-bottom: 60px;
+    }
+    @media all and (max-width: 500px) {
+      margin-bottom: 40px;
+    }
     p{
       font-style: normal;
       font-weight: 400;
@@ -262,6 +355,15 @@ body{
       text-align: center;
       color: #161616;
       margin-bottom: 34px;
+      @media all and (max-width: 1024px){
+        font-size: 22px;
+      }
+      @media all and (max-width: 768px){
+        font-size: 18px;
+      }
+      @media all and (max-width: 500px){
+        font-size: 14px;
+      }
     }
     strong{
       font-weight: 700;
@@ -272,6 +374,9 @@ body{
     top: 0;
     right: 0;
     pointer-events: none;
+    @media all and (max-width: 1024px){
+      display: none;
+    }
   }
   &__bg{
     position: absolute;
@@ -289,10 +394,25 @@ body{
 }
 .content{
   padding-top: 100px;
+  @media all and (max-width: 768px){
+    padding-top: 85px;
+  }
+  @media all and (max-width: 500px){
+    padding-top: 75px;
+  }
   &__tabs{
     display: flex;
     align-items: center;
     justify-content: center;
+    @media all and (max-width: 1024px){
+      display: none;
+    }
+    &-mobile{
+      display: none;
+      @media all and (max-width: 1024px){
+        display: block;
+      }
+    }
   }
   &__tab{
     background: #FFFFFF;
@@ -323,6 +443,12 @@ body{
       box-shadow: 0px 0px 16px rgba(211, 211, 96, 0.32);
       border-radius: 37px;
     }
+    @media all and (max-width: 1200px){
+      font-size: 16px;
+    }
+    @media all and (max-width: 1100px){
+      margin: 0 10px;
+    }
   }
   &__contents{
 
@@ -333,6 +459,9 @@ body{
     flex-direction: column;
     align-items: center;
     padding-top: 36px;
+    @media all and (max-width: 500px){
+      padding-top: 0;
+    }
     h3{
       font-style: normal;
       font-weight: 700;
@@ -342,6 +471,14 @@ body{
       color: #767620;
       margin-bottom: 17px;
       margin-top: 64px;
+      @media all and (max-width: 768px){
+        font-size: 33px;
+        margin-top: 49px;
+      }
+      @media all and (max-width: 500px){
+        font-size: 30px;
+        margin-top: 34px;
+      }
     }
     p{
       font-style: normal;
@@ -350,6 +487,12 @@ body{
       line-height: 28px;
       text-align: center;
       color: #000000;
+      @media all and (max-width: 768px){
+        font-size: 23px;
+      }
+      @media all and (max-width: 500px){
+        font-size: 18px;
+      }
     }
     P > em{
       font-style: normal;
@@ -358,6 +501,12 @@ body{
       line-height: 180%;
       text-align: center;
       color: #B1B1B1;
+      @media all and (max-width: 768px){
+        font-size: 18px;
+      }
+      @media all and (max-width: 500px){
+        font-size: 16px;
+      }
     }
     p strong em{
       font-style: normal;
@@ -366,6 +515,12 @@ body{
       line-height: 23px;
       text-align: center;
       color: #8F8F2D;
+      @media all and (max-width: 768px){
+        font-size: 18px;
+      }
+      @media all and (max-width: 500px){
+        font-size: 16px;
+      }
     }
   }
   &__button{
@@ -386,19 +541,77 @@ body{
     display: flex;
     align-items: center;
     justify-content: space-between;
+    @media all and (max-width: 1024px){
+      flex-direction: column;
+    }
   }
   &__logo{
     position: relative;
+    @media all and (max-width: 500px){
+      display: none;
+    }
+    &-mobile{
+      display: none;
+      @media all and (max-width: 500px){
+        display: block;
+      }
+    }
     .logo-left{
       position: absolute;
       bottom: 62px;
       right: 88px;
       pointer-events: none;
+      @media all and (max-width: 1024px){
+        display: none;
+      }
     }
   }
   &__contacts, &__phones, &__email{
     display: flex;
     align-items: center;
+    @media all and (max-width: 1024px){
+      flex-direction: column;
+      img{
+        margin-bottom: 10px;
+        filter: grayscale(1);
+        opacity: 0.35;
+      }
+    }
+  }
+  &__phones{
+    @media all and (max-width: 1024px){
+      margin-top: 43px;
+      a{
+        margin-bottom: 10px;
+        &:last-child{
+          margin-bottom: 0;
+        }
+      }
+    }
+    span{
+      display: block;
+      margin: 0 10px;
+      font-size: 20px;
+      line-height: 23px;
+      @media all and (max-width: 1024px){
+        display: none;
+      }
+    }
+  }
+  &__email{
+    @media all and (max-width: 1024px){
+      margin-top: 28px;
+    }
+  }
+  &__socials{
+    @media all and (max-width: 1024px){
+      margin-top: 50px;
+    }
+    a{
+      @media all and (max-width: 1024px){
+        margin: 0 10px;
+      }
+    }
   }
   a{
     text-decoration: none;
@@ -406,29 +619,9 @@ body{
     font-size: 20px;
     line-height: 23px;
     color: #161616;
-  }
-  .language-chooser-image{
-    position: relative;
-    img{
-      width: 100%;
-      height: 100%;
-    }
-    .active, a{
-      display: flex;
-      width: 30px;
-      height: 30px;
-      border-radius: 50%;
-      overflow: hidden;
-    }
-    .active{
-      cursor: pointer;
-    }
-    .other-language{
-      position: absolute;
-      top: 100%;
-      left: 0;
-      display: flex;
-      flex-direction: column;
+    @media all and (max-width: 1024px){
+      font-size: 20px;
+      line-height: 23px;
     }
   }
 }
@@ -436,21 +629,33 @@ body{
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   background-color: rgba(0,0,0,0.7);
   z-index: 99;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 50px;
+  @media all and (max-width: 500px){
+    padding: 20px;
+  }
   &__container{
     background: #FFFFFF;
     box-shadow: 0px 0px 22px rgba(0, 0, 0, 0.12);
     padding: 88px 85px 120px 85px;
     position: relative;
     max-width: 1120px;
-    height: 873px;
+    //height: 873px;
+    max-height: calc(100% - 40px);
+    overflow-y: scroll;
+    @media all and (max-width: 768px){
+      padding: 76px 50px 80px 50px;
+      height: auto;
+    }
+    @media all and (max-width: 500px){
+      padding: 60px 20px 40px 20px;
+    }
   }
   &__close{
     position: absolute;
@@ -474,7 +679,7 @@ body{
   &__title{
     font-weight: 600;
     font-size: 48px;
-    line-height: 56px;
+    line-height: 116%;
     text-align: center;
     letter-spacing: 0.05em;
     text-transform: uppercase;
@@ -482,6 +687,17 @@ body{
     position: relative;
     @extend .poiret;
     margin-bottom: 48px;
+    @media all and (max-width: 1024px){
+      font-size: 40px;
+    }
+    @media all and (max-width: 768px){
+      font-size: 32px;
+      margin-bottom: 22px;
+    }
+    @media all and (max-width: 500px){
+      font-size: 24px;
+      margin-bottom: 14px;
+    }
   }
   &__content{
     position: relative;
@@ -493,7 +709,20 @@ body{
       text-align: center;
       color: #161616;
       margin-bottom: 40px;
+      @media all and (max-width: 1024px){
+        font-size: 22px;
+      }
+      @media all and (max-width: 768px){
+        font-size: 18px;
+        margin-bottom: 18px;
+      }
+      @media all and (max-width: 500px){
+        font-size: 14px;
+        margin-bottom: 14px;
+      }
+      &:last-child{
+        margin-bottom: 0;
+      }
     }
-
   }
 }
