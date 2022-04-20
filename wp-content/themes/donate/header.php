@@ -20,9 +20,25 @@
     <link href="https://fonts.googleapis.com/css2?family=Poiret+One&family=Raleway:wght@100;300;400;500;700&display=swap" rel="stylesheet">
 	<?php wp_head(); ?>
 </head>
+<script>
+    window.onload = function () {
+        document.body.classList.add('loaded_hiding');
+        window.setTimeout(function () {
+            document.body.classList.add('loaded');
+            document.body.classList.remove('loaded_hiding');
+        }, 500);
 
+    }
+</script>
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
+<body class="page-{{ $page->seo->alias }}">
+<div class="preloader">
+    <div class="preloader__row">
+        <div class="preloader__item"></div>
+        <div class="preloader__item"></div>
+    </div>
+</div>
 	<header id="header" class="header">
         <div class="header__container main-container">
             <div class="header__logo-mobile">
