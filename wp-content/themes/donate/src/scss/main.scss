@@ -145,6 +145,14 @@ body{
   min-width: 392px;
   transition: ease-in 0.2s;
   border: 2px solid #D3D360;
+  &__desc{
+    margin-top: 4px;
+    display: block;
+  }
+  &__qr{
+    margin: 20px auto 20px auto;
+    width: 150px;
+  }
   @media all and (max-width: 500px){
     min-width: auto;
     width: 100%;
@@ -529,6 +537,10 @@ body{
     padding-top: 36px;
     @media all and (max-width: 500px){
       padding-top: 0;
+    }
+    form{
+      display: inline-flex;
+      flex-direction: column;
     }
     h3{
       font-style: normal;
