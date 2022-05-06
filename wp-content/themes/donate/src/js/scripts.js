@@ -48,6 +48,7 @@ $( document ).ready(function() {
         });
     };
 
+
     if ($(".popup__close").length){
         $(".popup__close").click( function(e) {
             $('.popup').fadeToggle(300);
@@ -79,7 +80,7 @@ $( document ).ready(function() {
                 .hide()
                 .fadeIn();
         }).eq(0).addClass("active");
-        $(".content__contents .content__content").eq(0).addClass("active").fadeIn(300);
+        $(".content__contents .content__content").eq(0).addClass("active").css("display", "flex").fadeIn(300);
     }
 
 });

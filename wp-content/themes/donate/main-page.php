@@ -19,9 +19,9 @@ $post_id = get_the_ID();
                     <?php echo get_field('banner_content', $post_id); ?>
                 </div>
                 <div class="banner__donate">
-                    <div class="banner__donate-btn button button-donate">
+                    <a href="https://pay.fondy.eu/s/w5W4tw4PbEVK" data-button="" class="banner__donate-btn button button-donate">
                         <?php echo get_field('knopka_donat_nadpis_na_knopke', $post_id); ?>
-                    </div>
+                    </a>
                 </div>
                 <div class="banner__popup">
                     <div class="main-container">
@@ -117,7 +117,7 @@ $post_id = get_the_ID();
                                             <?php
                                         } elseif($pay == "fondy"){
                                             ?>
-                                            <div class="content__button fondy pay-btn">
+                                            <a href="https://pay.fondy.eu/s/w5W4tw4PbEVK" data-button="" class="content__button fondy pay-btn">
                                                 <svg width="137" height="31" viewBox="0 0 137 31" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                     <path fill-rule="evenodd" clip-rule="evenodd" d="M51.3995 7.81861H43.7928V13.1304H51.1304V16.2662H43.7928V26.791H40.4988V4.68246H51.3995V7.81861Z" fill="#3D3D3D"/>
                                                     <path fill-rule="evenodd" clip-rule="evenodd" d="M57.4786 15.6718C57.4786 18.1142 58.2893 20.1214 59.9107 21.6952C61.5222 23.2687 63.3837 24.0557 65.4949 24.0557C67.7854 24.0557 69.7175 23.2547 71.2916 21.6527C72.8657 20.0306 73.6531 18.0563 73.6531 15.7298C73.6531 13.3739 72.8752 11.3996 71.3202 9.8065C69.774 8.2041 67.8606 7.40308 65.5796 7.40308C63.3082 7.40308 61.3902 8.2041 59.8256 9.8065C58.261 11.3896 57.4786 13.3453 57.4786 15.6718ZM54.1563 15.6361C54.1563 12.5246 55.2824 9.85192 57.5351 7.61835C59.7783 5.38372 62.4738 4.26694 65.6223 4.26694C68.7327 4.26694 71.4 5.39373 73.6245 7.64696C75.8585 9.89912 76.9753 12.6058 76.9753 15.7655C76.9753 18.9439 75.8535 21.6405 73.6103 23.8555C71.3576 26.0798 68.6381 27.1912 65.4525 27.1912C62.6345 27.1912 60.1038 26.2035 57.8606 24.2278C55.3908 22.0414 54.1563 19.1781 54.1563 15.6361Z" fill="#62BA46"/>
@@ -137,8 +137,7 @@ $post_id = get_the_ID();
                                                     <path fill-rule="evenodd" clip-rule="evenodd" d="M14.4525 18.0354L10.5385 20.4474L6.62408 18.0354V13.2103L10.5385 10.7979L14.4525 13.2103V18.0354Z" fill="#3D3D3D"/>
                                                     <path fill-rule="evenodd" clip-rule="evenodd" d="M23.4853 18.0354L19.5713 20.4474L15.6569 18.0354V13.2103L19.5713 10.7979L23.4853 13.2103V18.0354Z" fill="#3D3D3D"/>
                                                 </svg>
-
-                                            </div>
+                                            </a>
                                             <?php
                                         };
                                         ?>
